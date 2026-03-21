@@ -1,0 +1,40 @@
+#FOUR pillars of opp
+#Abstraction
+
+#Encapsulation
+class ATM:      
+    def __init__(self,balance):
+        self.balance = balance          #Public
+
+Appu = ATM(1000)
+print(Appu.balance)
+print("\n")
+class ATM:
+    def __init__(self,balance):
+        self.__balance = balance            #private
+
+    def check_balance(self):
+        print(self.__balance)
+
+Appu = ATM(1000)
+#print(Appu.__balance)  #This shows error because we can only access the balance by using the ATM function can't easily change it by antone 
+
+#Creating a simple data base
+class database:
+    def __init__(self):
+        self.storage = {}
+
+    def write(self,key,value):
+        self.storage[key] = value
+    
+    def read(self,key):
+        if key in self.storage:
+            print(self.storage[key])
+        else:
+            print("Data base is not available")
+
+db = database()
+db.write("subscribers","100k")
+db.write("name","Engineering in kannada")
+print(db.storage)
+
