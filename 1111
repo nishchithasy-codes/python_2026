@@ -1,0 +1,45 @@
+#Super()
+class food:
+    def taste(self):
+        print("It's tasting soo good!")
+
+class dosa(food):
+    def taste(self):
+        print("Super taste!!!")
+
+class biryani(food):
+    def taste(self):
+        super().taste()
+        print("That is biryani is super!!")
+
+#hotel = food()
+restuarant1 = biryani()     #parent class method will come here
+restuarant1.taste()     #Own class method
+
+restuarant2 = dosa()        #No super(), therefore no parent class methods here, soo it is showing none
+restuarant2.taste()
+
+class animal:
+    
+    def __init__(self,name):
+        self.name = name
+
+    def sound(self):
+        print(f"{self.name} is making a sound.")
+
+
+class dog(animal):
+    def __init__(self,name,breed):
+        super().__init__(name)
+        self.breed = breed
+
+    def sound(self):
+        super().sound()
+        print(f"{self.name} barks")
+        self.sound()
+
+
+d = dog("Buddy","labrador")
+d.sound()
+
+
