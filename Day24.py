@@ -1,21 +1,49 @@
-num1 = int(input("Enter a first number:"))
-num2 = int(input("Enter a second number:"))
+#Inheritance
 
-print("1. Add")
-print("2. Subtract")
-print("3. Divide")
-print("4. Multiply")
+class vehicle:
+    def start(self):
+        print("Vehicle is starting")
 
-choice = input("Enter your choice:")
+class bike(vehicle):
+    def __init__(self,name):
+        self.name = name
+    def ride(self):
+        print("It was ridding now!")
 
-if choice == 1:
-    print(num1+num2)
-elif choice == 2:
-    print(num1-num2)
-elif choice == 3:
-    if num2 != 0:
-        print(num1/num2)
-    else:
-        print("Invalid input!")
-else:
-    print(num1*num2)
+b = bike("Royal Enfield")
+b.start()
+b.ride()
+
+class shape:
+    def calc_area(self):
+        print("The are of:")
+
+class circle(shape):
+    def __init__(self,radius):
+        self.radius = radius
+    
+    def calc_area(self):
+        print(f"Circle is: {22/7*self.radius*self.radius}")
+
+class rectangle:
+    def __init__(self,l,b):
+        self.l = l
+        self.b = b
+    def calc_area(self):
+        print(f"Rectangle is: {self.l*self.b}")
+
+c = circle(5)
+c.calc_area()
+R = rectangle(2,2)
+R.calc_area()
+
+class phone:
+    def take_picture(self):
+        #Call os api to open camera
+        #wait for users click
+        #process the image
+        #store image
+        #return preview
+        print("picture was taken")
+p =phone()
+p.take_picture()
