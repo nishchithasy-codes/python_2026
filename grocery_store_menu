@@ -1,0 +1,33 @@
+
+
+cart={}
+def grocery():
+    print("----------Groceries-----------")
+    print("1. Add item")
+    print("2. Remove item")
+    print("3. View total price")
+    print("4. Exiting")
+
+while True:
+    grocery()
+    choice = int(input("Enter your choice>>>"))
+    if choice==1:
+        item=input(("Enter the item to add to cart:"))
+        cart.append(item)
+    elif choice==2:
+        item = input(("Enter the item to remove:"))
+        if item in cart:
+            cart.remove(item)
+            print("Item removed fro the cart")
+        else:
+            print("Item not found in the cart")
+    elif choice==3:
+        total=sum(cart.values())
+        print("The items are:",cart)
+        print("The total price is:",total)
+    elif choice==4:
+        print("thank you for shopping with us*.")
+        break
+    else:
+        print("Please enter a valid choice!")
+
