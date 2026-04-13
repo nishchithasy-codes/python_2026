@@ -1,27 +1,21 @@
-#Dependency Inversion principle
+a = int(input("Enter a number: "))
+b = int(input("Enter anumber:"))
 
-class InputDevice:
-    def Input(self):
-        pass
-class Keyboard:
-    def Input(self):
-        print("User typing>")
-class Mouse:
-    def Input(self):
-        print("mouse clicked.")
+try:
+    print(a/b)
+except Exception as e:
+    print(f"Error occur -> {e}")
+else:
+    print("No error came,**Congrats**.")
+finally:
+    print("Program ended here.")
+    
+try:
+    boy = input("Whom do you want to marry:")
+    if boy.lower() != "chandan":
+        raise Exception("You can only choose Chandan,select him.")
+except Exception as e:
+    print(f"Error is {e}.") 
+else:
+    print("Yes, Chandan is ready.Have nice journey!")
 
-class Computer:
-    def __init__(self,device: InputDevice):
-        self.device = device
-    def get_input(self):
-        return self.device.Input()
-        
-type = Keyboard()
-click = Mouse()
-
-type.Input()
-click.Input()
-
-code = Computer(type)
-#code = Computer(click)
-code.get_input()
